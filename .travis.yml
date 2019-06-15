@@ -1,15 +1,21 @@
 language: cpp
-dist: xenial
 sudo: required
 
+cache:
+  ccache: true
+  directories:
+    - .ccache
+
 before_script:
-  - apt-get update -qq && apt-get install -y -qq cmake extra-cmake-modules \
-        libglib2.0-dev gpsim-dev \
-        qt5-default \
-        libkf5config-dev libkf5coreaddons-dev libkf5doctools-dev \
-        libkf5iconthemes-dev libkf5i18n-dev libkf5kdelibs5support-dev \
-        libkf5khtml-dev libkf5parts-dev libkf5texteditor-dev \
-        libkf5textwidgets-dev libkf5solid-dev libkf5widgetsaddons-dev \
+  - sudo apt update -qq
+  - sudo apt install -y -qq
+        cmake extra-cmake-modules
+        libglib2.0-dev gpsim-dev
+        qt5-default
+        libkf5config-dev libkf5coreaddons-dev libkf5doctools-dev
+        libkf5iconthemes-dev libkf5i18n-dev libkf5kdelibs5support-dev
+        libkf5khtml-dev libkf5parts-dev libkf5texteditor-dev
+        libkf5textwidgets-dev libkf5solid-dev libkf5widgetsaddons-dev
         libkf5xmlgui-dev
 
 script:

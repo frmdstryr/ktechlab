@@ -1,5 +1,6 @@
 language: cpp
 dist: xenial
+sudo: required
 
 before_script:
   - apt-get update -qq && apt-get install -y -qq cmake extra-cmake-modules \
